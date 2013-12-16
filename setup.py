@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "geoapi",
-    version = "1.0.0",
+    version = "1.0.1",
     url = 'https://github.com/ondrejsika/light-geo-api/',
     license = 'MIT',
     description = "Geo API",

@@ -5,18 +5,22 @@ from flask import Flask, Response, request
 
 import conf
 
+from rest.flask_helpers import access_controll_allow_all
 
 app = Flask(__name__)
 
 @app.errorhandler(404)
+@access_controll_allow_all
 def e404(e):
     return conf.HTML_404_NOT_FOUND+conf.HTML_FOOTER, 404
 
 @app.route("/")
+@access_controll_allow_all
 def index():
     return conf.HTML_INDEX+conf.HTML_FOOTER
 
 @app.route("/api/v1/")
+@access_controll_allow_all
 def api_v1():
     latitude = request.args.get("latitude", None)
     longitude = request.args.get("longitude", None)
